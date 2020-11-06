@@ -1,0 +1,23 @@
+#source /opt/ros/fuerte/setup.zsh
+#export ROS_WORKSPACE=$HOME/ros/local
+SHELLSUFFIX=$(basename $SHELL)
+ROSSETUPS="/usr/lib64/ros/setup.$SHELLSUFFIX $HOME/ros/install/setup.$SHELLSUFFIX $HOME/catkin_ws/devel/setup.$SHELLSUFFIX /opt/ros/setup.$SHELLSUFFIX $HOME/ros/carologistics_ws/devel/setup.$SHELLSUFFIX"
+if [ "$SHELLSUFFIX" = "zsh" ] ; then
+  setopt shwordsplit
+fi
+for ROSSETUP in $ROSSETUPS ; do
+  if [ -f  $ROSSETUP ] ; then
+    source $ROSSETUP
+  fi
+done
+if [ "$SHELLSUFFIX" = "zsh" ] ; then
+  unsetopt shwordsplit
+fi
+#if [ -f $HOME/ros/local/devel/setup.zsh ] ; then
+#  source $HOME/ros/local/devel/setup.zsh
+#elif [ -f $HOME/ros/catkin_ws/devel_isolated/setup.zsh ] ; then
+#  source $HOME/ros/catkin_ws/devel_isolated/setup.zsh
+#fi
+#if [ -f $HOME/.rcll.setup ] ; then
+#  source $HOME/.rcll.setup
+#fi

@@ -1,0 +1,6 @@
+export FAWKES_DIR=~/code/fawkes-robotino
+export GAZEBO_RCLL=~/code/gazebo-rcll
+export GAZEBO_PLUGIN_PATH=$GAZEBO_RCLL/plugins/lib/gazebo
+export GAZEBO_MODEL_PATH=$GAZEBO_RCLL/models:$GAZEBO_RCLL/models/carologistics
+export LLSF_REFBOX_DIR=~/code/llsf-refbox
+export GAZEBO_WORLD_PATH=~/code/gazebo-rcll/worlds/carologistics/llsf.world
