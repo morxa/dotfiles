@@ -17,10 +17,6 @@ function rll () {
   mosh robotino-laptop-local-$1
 }
 
-function rv () {
-  ROS_MASTER_URI=http://robotino-base-$1:11311/ rosrun rviz rviz
-}
-
 alias sg="~/code/fawkes-robotino/bin/skillgui"
 
 alias xcc="xclip -selection clipboard"
@@ -53,3 +49,24 @@ function gitpn ()
 }
 
 alias v=vim
+
+function xrun ()
+{
+  if [[ "$XDG_SESSION_TYPE" == "wayland" ]] ; then
+    GDK_BACKEND=x11 \
+      QT_QPA_PLATFORM=xcb \
+      SDL_VIDEODRIVER=x11 \
+      _JAVA_AWT_WM_NONREPARENTING=1 \
+      WINIT_UNIX_BACKEND=x11 \
+      SDL_VIDEODRIVER=wayland \
+      $@
+  else
+    $@
+  fi
+}
+
+alias rviz="xrun rviz"
+
+function rv () {
+  ROS_MASTER_URI=http://robotino-base-$1:11311/ rviz
+}
