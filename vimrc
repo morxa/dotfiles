@@ -194,6 +194,8 @@ autocmd FileType cmake,cpp nnoremap <leader>b :CMake<CR>
 
 " cmake
 let g:cmake_export_compile_commands = 1
+let g:cmake_ycm_symlinks = 1
+let g:cmake_build_flags = "-j`nproc`"
 
 " Set prolog as default filetype for .pl files
 au BufRead,BufNewFile *.pl set filetype=prolog
