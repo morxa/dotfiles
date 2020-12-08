@@ -34,6 +34,7 @@ alias cdcg="cd $FC/src/plugins/gologpp/"
 alias gk="./gazsim.bash -x kill"
 alias kf='pass Fedora/fas | kinit thofmann@FEDORAPROJECT.ORG'
 alias dnfqraw='dnf repoquery --repo=rawhide'
+alias ssh="TERM=linux ssh"
 
 function gitcleanbranches ()
 {
