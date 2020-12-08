@@ -202,12 +202,14 @@ au BufRead,BufNewFile *.pl set filetype=prolog
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
+colorscheme ayu
 
 " YCM setttings
 nnoremap <leader>g :YcmCompleter GoTo<CR>
 nnoremap <leader>r :YcmCompleter GotoReferences<CR>
 nnoremap <leader>f :YcmCompleter FixIt<CR>
+nnoremap <leader>e :lnext<CR>
+nnoremap <leader>E :lprevious<CR>
 
 " committia
 let g:committia_hooks = {}
