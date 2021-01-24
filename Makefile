@@ -3,4 +3,4 @@ install: $(addprefix $(DESTDIR)/.,$(filter-out Makefile (wildcard README*),$(wil
 
 $(DESTDIR)/.%: %
 	mkdir -p "$(dir $@)"
-	ln -s $(abspath $<) $@
+	ln -T -s $(abspath $<) $@
