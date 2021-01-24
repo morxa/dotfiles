@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-source ~/.aliases.zsh
+source ~/.aliases.sh
 
 BEAR_FILE=compile_commands.json
 function m () {
