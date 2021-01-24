@@ -1,0 +1,28 @@
+[user]
+	email = hofmann@kbsg.rwth-aachen.de
+	name = Till Hofmann
+[color]
+	ui = auto
+	status = auto
+[alias]
+	ci = commit
+	co = checkout
+  d  = diff
+  dc = diff --cached
+	st = status -sb
+	stu = status -sb -uno
+	ff = pull --ff-only
+  pr = pull --rebase
+  mm = merge --no-ff
+	unmerged = branch -a --no-merged HEAD
+	merged = branch -a --merged
+[push]
+	default = upstream
+[core]
+	editor = vim
+  pager = less -F -x 1,3
+	quotepath = false
+[merge]
+	conflictstyle = diff3
+[fetch]
+	prune = true
