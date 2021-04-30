@@ -178,4 +178,6 @@ VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 source ~/.rosrc
 source ~/.rcllrc
 
+export ANSIBLE_STDOUT_CALLBACK=debug
+
 #export READYLOG_PL=~/code/readylog/interpreter/
