@@ -171,6 +171,7 @@ let g:cmake_export_compile_commands = 1
 let g:cmake_ycm_symlinks = 1
 "let g:cmake_build_flags = "-j`nproc`"
 let g:cmake_use_smp = 1
+let g:cmake_build_type = "Debug"
 
 " Set prolog as default filetype for .pl files
 au BufRead,BufNewFile *.pl set filetype=prolog
