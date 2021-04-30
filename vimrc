@@ -143,6 +143,9 @@ let g:autopep8_cmd = 'autopep8-3'
 let g:autopep8_disable_show_diff = 1
 let g:autopep8_on_save = 1
 
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 set tabstop=2
 set sw=2
 "set textwidth=80
