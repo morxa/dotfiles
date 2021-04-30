@@ -71,33 +71,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
-let g:Tex_DefaultTargetFormat='pdf'
-"let g:Tex_MultipleCompileFormats='dvi,pdf'
-"let g:Tex_CompileRule_pdf='pdflatex -shell-escape -interaction=nonstopmode $*'
-let g:Tex_CompileRule_pdf='latexmk -pdf -shell-escape $*'
-let g:Tex_GotoError = 0
-let g:Tex_IgnoredWarnings =
-\"Underfull\n".
-\"Overfull\n".
-\"specifier changed to\n".
-\"You have requested\n".
-\"Missing number, treated as zero.\n".
-\"There were undefined references\n"
-\"Citation %.%# undefined\n"
-\"'LaTeX Font Warning:'"
-" Set the warning messages to ignore.
-let g:Tex_IgnoredWarnings =
-\"Underfull\n".
-\"Overfull\n".
-\"specifier changed to\n".
-\"You have requested\n".
-\"Missing number, treated as zero.\n".
-\'LaTeX Font Warning:'".
-\"There were undefined references\n".
-\"Citation %.%# undefined\n"
-let g:Tex_IgnoreLevel = 6
-let g:Tex_FoldedCommands = "appendix"
-
 " vim-template options
 let g:user        = "Till Hofmann"
 let g:email       = "hofmann@kbsg.rwth-aachen.de"
