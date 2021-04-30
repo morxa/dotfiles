@@ -163,7 +163,7 @@ set wildmode=longest,list,full
 set wildmenu
 
 autocmd FileType cmake,cpp nnoremap <C-m> :make!<CR>
-autocmd FileType cmake,cpp nnoremap <C-t> :make! CTEST_OUTPUT_ON_FAILURE=1 all test<CR>
+autocmd FileType cmake,cpp nnoremap <C-t> :make! CTEST_OUTPUT_ON_FAILURE=1 test<CR>
 autocmd FileType cmake,cpp nnoremap <leader>b :CMake<CR>
 
 " cmake
