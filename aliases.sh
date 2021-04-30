@@ -71,3 +71,10 @@ alias rviz="xrun rviz"
 function rv () {
   ROS_MASTER_URI=http://robotino-base-$1:11311/ rviz
 }
+
+function vnc () {
+  ssh $1 startvnc.bash
+  vncviewer -via kirk.kbsg.rwth-aachen.de $1:${2-1105}
+}
+
+compdef vnc=ssh
