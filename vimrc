@@ -109,6 +109,12 @@ call vimtex#imaps#add_map({
 let g:vimtex_fold_enabled=0
 "let g:vimtex_latexmk_callback=0
 
+let g:vimtex_quickfix_ignore_filters = [
+  \'Package todonotes Warning: The length marginparwidth is less than 2cm',
+  \'Font shape',
+  \'Token not allowed in a PDF string',
+\]
+
 " vimtex + neocomplete
 if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
