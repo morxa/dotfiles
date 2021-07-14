@@ -109,27 +109,22 @@ function m () {
     USE_BEAR=0
   else
     USE_BEAR=1
-#    TOPDIR=$PWD
-#    while [ "$TOPDIR" != / ] ; do
-#      if [ -f $TOPDIR/$BEAR_FILE ] ; then
-#        BEAR_FILEPATH=$TOPDIR/$BEAR_FILE
-#        break
-#      fi
-#      if [ -f $TOPDIR/build/$BEAR_FILE ] ; then
-#        BEAR_FILEPATH=$TOPDIR/build/$BEAR_FILE
-#        break
-#      fi
-#      TOPDIR=$(realpath $TOPDIR/..)
-#    done
-#    if [[ "$BEAR_FILEPATH" == "" ]] ; then
-#        echo "Could not find compile_commands.json anywhere in the tree."
-#        return -1
-#    fi
-#    BEAR_ARGS="-a -o $BEAR_FILEPATH"
+    TOPDIR=$PWD
+    while [[ "$TOPDIR" != / ]] ; do
+      if [ -f $TOPDIR/$BEAR_FILE ] ; then
+        BEAR_FILEPATH=$TOPDIR/$BEAR_FILE
+        break
+      fi
+      TOPDIR=$(realpath $TOPDIR/..)
+    done
+    if [[ "$BEAR_FILEPATH" == "" ]] ; then
+        echo "Could not find compile_commands.json anywhere in the tree."
+        USE_BEAR=0
+    fi
   fi
   if [[ "$USE_BEAR" == 1 ]] ; then
-    #bear $BEAR_ARGS make -j`nproc` -l`nproc` $@
-    bear -a -o ~/compile_commands.json make -j`nproc` -l`nproc` $@
+    echo "Using $BEAR_FILEPATH"
+    bear --append --output $BEAR_FILEPATH -- make -j`nproc` -l`nproc` $@
   else
     make -j`nproc` -l`nproc` $@
   fi
