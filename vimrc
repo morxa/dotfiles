@@ -262,4 +262,7 @@ let g:UltiSnipsEditSplit="context"
 " markdown
 call mkdp#util#install()
 
+" folding
+autocmd FileType c,cpp set foldmethod=syntax
+
 "autocmd FileType tex let b:ycm_largefile=1
