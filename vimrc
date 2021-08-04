@@ -48,6 +48,7 @@ Plugin 'iamcco/markdown-preview.nvim'
 Plugin 'vhdirk/vim-cmake'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'kgreenek/vim-ros-ycm'
 Plugin 'Konfekt/FastFold'
 
 
