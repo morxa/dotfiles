@@ -16,7 +16,7 @@ Plugin 'tpope/vim-git'
 
 "Plugin 'ap/vim-templates'
 "Plugin 'drbeco/vimtemplates'
-Plugin 'aperezdc/vim-template'
+"Plugin 'aperezdc/vim-template'
 Plugin 'adimit/prolog.vim'
 "Plugin 'tmhedberg/SimpylFold'
 "Plugin 'vim-scripts/indentpython.vim'
