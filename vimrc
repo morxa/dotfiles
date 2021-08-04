@@ -38,21 +38,17 @@ Plugin 'rhysd/committia.vim'
 
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'scrooloose/nerdtree'
-
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rhubarb'
 Plugin 'shumphrey/fugitive-gitlab.vim'
-
 Plugin 'google/vim-maktaba'
 Plugin 'google/vim-codefmt'
 Plugin 'google/vim-glaive'
-
 Plugin 'iamcco/markdown-preview.nvim'
-
 Plugin 'vhdirk/vim-cmake'
-
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'Konfekt/FastFold'
 
 
 " All of your Plugins must be added before the following line
