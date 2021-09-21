@@ -24,5 +24,6 @@
 	quotepath = false
 [merge]
 	conflictstyle = diff3
+	tool = vimdiff
 [fetch]
 	prune = true
