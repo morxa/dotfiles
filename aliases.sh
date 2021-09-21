@@ -38,7 +38,8 @@ alias ssh="TERM=linux ssh"
 
 function gitcleanbranches ()
 {
-  for b in $(git branch --merged master | grep -v master | grep -v '*') ; do
+  local main_branch=${1:-main}
+  for b in $(git branch --merged $main_branch | grep -vw "$main_branch\$" | grep -vw '^*') ; do
     git branch -d $b
   done
 }
