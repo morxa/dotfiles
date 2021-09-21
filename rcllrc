@@ -1,4 +1,6 @@
-source /usr/share/gazebo/setup.sh
+if [ -f /usr/share/gazebo/setup.sh ] ; then
+  source /usr/share/gazebo/setup.sh
+fi
 export FAWKES_DIR=~/code/fawkes-robotino
 export GAZEBO_RCLL=~/code/gazebo-rcll
 export GAZEBO_PLUGIN_PATH=${GAZEBO_PLUGIN_PATH+${GAZEBO_PLUGIN_PATH}:}$GAZEBO_RCLL/build/plugins
