@@ -124,7 +124,7 @@ let g:ycm_rust_src_path = '/usr/lib/rustlib/src/rust/src/'
 " YouCompleteMe + clangd settings
 let g:ycm_clangd_uses_ycmd_caching = 0
 "let g:ycm_clangd_binary_path = exepath("clangd")
-
+let g:ycm_always_populate_location_list = 1
 " autopep
 let g:autopep8_cmd = 'autopep8-3'
 let g:autopep8_disable_show_diff = 1
