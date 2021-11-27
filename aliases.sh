@@ -82,3 +82,14 @@ function vnc () {
 }
 
 compdef vnc=ssh
+
+function restart () {
+  if [ $# -ne 1 ] ; then
+    echo "Usage: restart <host>" >&2
+    exit 1
+  fi
+  ssh $1 shutdown -r now
+  run_and_notify.bash --fail-first ping -c 1 $1
+}
+
+compdef restart=ssh
