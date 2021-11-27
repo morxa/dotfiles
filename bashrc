@@ -22,8 +22,10 @@ export PATH
 #fi
 
 #GIT_PROMPT_ONLY_IN_REPO=1
-GIT_PROMPT_START="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]"
-source ~/.bash-git-prompt/gitprompt.sh
+if [[ -f ~/.bash-git-prompt/gitprompt.sh ]] ; then
+  GIT_PROMPT_START="\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]"
+  source ~/.bash-git-prompt/gitprompt.sh
+fi
 
 #source ~/.rosrc
 source ~/.rcllrc
