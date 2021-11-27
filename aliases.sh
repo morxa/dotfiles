@@ -75,10 +75,10 @@ function rv () {
 
 function vnc () {
   ssh kirk.kbsg.rwth-aachen.de wakemachine $1 || (echo "Failed to wake $1"; exit 1)
-  ping -q -c 1 $1
-  while [ $? -ne 0 ] ; do ping -q -c 1 $1; done
+  ret=1
+  while [ $ret -ne 0 ] ; do ping -q -c 1 $1; ret=$?; sleep 1; done
   ssh $1 startvnc.bash
-  vncviewer -via kirk.kbsg.rwth-aachen.de $1:${2-1105}
+  vncviewer -via $1 $1:${2-1105}
 }
 
 compdef vnc=ssh
