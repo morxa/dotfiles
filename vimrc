@@ -110,6 +110,9 @@ let g:vimtex_quickfix_ignore_filters = [
   \'Package todonotes Warning: The length marginparwidth is less than 2cm',
   \'Font shape',
   \'Token not allowed in a PDF string',
+  \'Overfull',
+  \'Command @arrayparboxrestore has changed',
+  \'Marginpar .* moved',
 \]
 
 " vimtex + YouCompleteMe
