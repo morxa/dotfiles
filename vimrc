@@ -230,6 +230,8 @@ augroup autoformat_settings
   autocmd FileType python AutoFormatBuffer yapf
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
   autocmd FileType rust AutoFormatBuffer rustfmt
+  " See https://github.com/google/vim-codefmt/pull/163
+  "autocmd FileType cmake AutoFormatBuffer cmake-format
   "autocmd FileType vue AutoFormatBuffer prettier
 augroup END
 
