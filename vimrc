@@ -240,12 +240,12 @@ set modelineexpr
 "autocmd FileType tex set formatexpr=OneSentencePerLineFormatExpr(v:lnum,v:lnum+v:count-1)
 autocmd FileType tex set colorcolumn=0
 autocmd FileType tex set textwidth=0
-autocmd FileType tex inoremap . .
-autocmd FileType tex inoremap \. .
-autocmd FileType tex inoremap ! !
-autocmd FileType tex inoremap \! !
-autocmd FileType tex inoremap ? ?
-autocmd FileType tex inoremap \? ?
+autocmd FileType tex inoremap .<Space> .
+"autocmd FileType tex inoremap \. .
+autocmd FileType tex inoremap !<Space> !
+"autocmd FileType tex inoremap \! !
+autocmd FileType tex inoremap ?<Space> ?
+"autocmd FileType tex inoremap \? ?
 
 autocmd FileType spec set textwidth=0
 autocmd FileType spec set colorcolumn=0
