@@ -50,6 +50,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'kgreenek/vim-ros-ycm'
 Plugin 'Konfekt/FastFold'
+Plugin 'github/copilot.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -275,5 +276,10 @@ call mkdp#util#install()
 
 " folding
 autocmd FileType c,cpp set foldmethod=syntax
+
+let g:copilot_filetypes = {
+      \ 'tex': v:false,
+      \ }
+
 
 "autocmd FileType tex let b:ycm_largefile=1
