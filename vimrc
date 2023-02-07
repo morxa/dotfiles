@@ -112,8 +112,15 @@ let g:vimtex_quickfix_ignore_filters = [
   \'Font shape',
   \'Token not allowed in a PDF string',
   \'Overfull',
+  \'Underfull',
   \'Command @arrayparboxrestore has changed',
   \'Marginpar .* moved',
+  \'Draft mode on',
+  \'Unknown slot number of character',
+  \'Command \\@arrayparboxrestore\s*has changed',
+  \'Missing "address"',
+  \'Missing "publisher"',
+  \'Columns might not be balanced',
 \]
 
 " vimtex + YouCompleteMe
