@@ -29,3 +29,7 @@ colors:
     magenta: '0x6845ad'
     cyan:    '0x327698'
     white:   '0x262a3f'
+
+font:
+  normal:
+    family: Anka/Coder Narrow
