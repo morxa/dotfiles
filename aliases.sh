@@ -95,12 +95,25 @@ function vnc () {
 compdef vnc=ssh
 
 function restart () {
-  if [ $# -ne 1 ] ; then
-    echo "Usage: restart <host>" >&2
-    exit 1
+  TARGETHOST="$1"
+  SUDO=""
+  if [ $# -eq 2 ] ; then
+    if  [ "$1" = "--sudo" ] ; then
+      SUDO="sudo"
+      TARGETHOST="$2"
+    else
+      echo "Usage: restart [--sudo] <host>" >&2
+      return 1
+    fi
+  elif [ $# -ne 1 ] ; then
+    SSHUSER=root
+    echo "Usage: restart [--sudo] <host>" >&2
+    return 1
+  else
+    SSHUSER="root"
   fi
-  ssh $1 shutdown -r now
-  run_and_notify.bash --fail-first ping -c 1 $1
+  ssh ${SUDO:+-t} ${SSHUSER:+$SSHUSER@}${TARGETHOST} $SUDO shutdown -r || return 1
+  run_and_notify.bash --fail-first ping -c 1 $TARGETHOST
 }
 
 compdef restart=ssh
