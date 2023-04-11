@@ -38,7 +38,18 @@ alias ssh="TERM=linux ssh"
 
 function gitcleanbranches ()
 {
-  local main_branch=${1:-main}
+  local main_branch
+  git rev-parse --verify -q main
+  if [ $? -eq 0 ] ; then
+    main_branch=main
+  else
+    main_branch=master
+  fi
+  git rev-parse --verify -q $main_branch
+  if [ $? -ne 0 ] ; then
+    echo "Failed to get main branch, neither 'master' nor 'main' is valid" >&2
+    return 1
+  fi
   for b in $(git branch --merged $main_branch | grep -vw "$main_branch\$" | grep -vw '^*') ; do
     git branch -d $b
   done
