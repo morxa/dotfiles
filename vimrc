@@ -50,7 +50,10 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'kgreenek/vim-ros-ycm'
 Plugin 'Konfekt/FastFold'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'andymass/vim-matchup'
 Plugin 'github/copilot.vim'
+Plugin 'rkaminsk/vim-syntax-clingo'
 
 
 " All of your Plugins must be added before the following line
