@@ -1,0 +1,8 @@
+[Unit]
+Description=Install latest version of Zoom
+ConditionACPower=true
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=simple
+ExecStart=/usr/bin/dnf install -y https://zoom.us/client/latest/zoom_x86_64.rpm

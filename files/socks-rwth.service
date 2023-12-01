@@ -1,0 +1,16 @@
+[Unit]
+Description=SOCKS5 proxy for RWTH
+After=network-online.target
+Wants=network-online.target
+After=gnome-session-initialized.target
+StartLimitIntervalSec=1h
+StartLimitBurst=5
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/ssh -v -D 1080 -N mangan.informatik.rwth-aachen.de
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=graphical-session.target

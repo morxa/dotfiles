@@ -1,0 +1,6 @@
+[Unit]
+Description=Update vim plugins
+Wants=vim-ycm-update.service
+[Service]
+Type=oneshot
+ExecStart=vim +PluginUpdate +qall

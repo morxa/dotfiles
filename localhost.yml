@@ -1,0 +1,39 @@
+- hosts: localhost
+  tasks:
+    - name: install zoom updater
+      copy:
+        src: zoom-update.service
+        dest: /etc/systemd/system
+      become: yes
+    - name: install zoom update timer
+      copy:
+        src: zoom-update.timer
+        dest: /etc/systemd/system
+      become: yes
+    - name: enable zoom update timer
+      systemd:
+        name: zoom-update.timer
+        state: started
+        enabled: yes
+    - name: create directory for user services
+      file:
+        path: ~/.config/systemd/user/
+        state: directory
+    - name: add user services
+      copy:
+        src: '{{ item }}'
+        dest: ~/.config/systemd/user/
+      loop:
+        - socks-rwth.service
+        - vim-plugins-update.service
+        - vim-plugins-update.timer
+        - vim-ycm-update.service
+    - name: enable user services
+      systemd:
+        name: '{{ item }}'
+        state: started
+        enabled: yes
+        scope: user
+      loop:
+        - socks-rwth.service
+        - vim-plugins-update.timer

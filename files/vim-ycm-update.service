@@ -1,0 +1,6 @@
+[Unit]
+Description=Update YCM
+After=vim-plugins-update.service
+[Service]
+Type=oneshot
+ExecStart=%h/.vim/bundle/YouCompleteMe/install.py --clangd-completer --rust-completer
