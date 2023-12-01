@@ -178,4 +178,11 @@ source ~/.rcllrc
 
 export ANSIBLE_STDOUT_CALLBACK=debug
 
+if command -v github-copilot-cli &> /dev/null
+then
+  eval "$(github-copilot-cli alias -- "$0")"
+fi
+
+
+
 #export READYLOG_PL=~/code/readylog/interpreter/
