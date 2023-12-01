@@ -50,7 +50,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git notify)
-plugins=(git docker)
+plugins=(git docker pipenv)
 
 # User configuration
 
@@ -167,6 +167,8 @@ function vi_mode_prompt_info() {
 # define right prompt, regardless of whether the theme defined it
 RPS1='$(vi_mode_prompt_info)'
 RPS2=$RPS1
+
+eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 
 export LC_TIME=en_GB.UTF-8
 
