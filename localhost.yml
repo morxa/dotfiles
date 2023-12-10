@@ -37,3 +37,8 @@
       loop:
         - socks-rwth.service
         - vim-plugins-update.timer
+    - name: add run-and-notify script
+      copy:
+        src: run_and_notifiy.bash
+        dest: ~/bin
+        mode: 0755
