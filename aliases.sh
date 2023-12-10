@@ -95,8 +95,9 @@ function vnc () {
 compdef vnc=ssh
 
 function restart () {
-  TARGETHOST="$1"
-  SUDO=""
+  local TARGETHOST="$1"
+  local SUDO=""
+  local SSHUSER=""
   if [ $# -eq 2 ] ; then
     if  [ "$1" = "--sudo" ] ; then
       SUDO="sudo"
@@ -106,14 +107,24 @@ function restart () {
       return 1
     fi
   elif [ $# -ne 1 ] ; then
-    SSHUSER=root
     echo "Usage: restart [--sudo] <host>" >&2
     return 1
   else
     SSHUSER="root"
   fi
-  ssh ${SUDO:+-t} ${SSHUSER:+$SSHUSER@}${TARGETHOST} $SUDO shutdown -r || return 1
-  run_and_notify.bash --fail-first ping -c 1 $TARGETHOST
+  local FQDN=$TARGETHOST
+  local TAILSCALE_HOST="$TARGETHOST.tailnet-d0ca.ts.net"
+  if [ "$TARGETHOST" != "elefant" ] ; then
+    FQDN="$TARGETHOST.fritz.box"
+  fi
+  echo "Restarting $TARGETHOST ..."
+  local USERARGS="${SSHUSER:+$SSHUSER@}"
+  ssh ${USERARGS}$TAILSCALE_HOST shutdown -r || (echo "Failed to restart $TARGETHOST"; return 1)
+  echo "Waiting for $TARGETHOST to be online"
+  run_and_notify.bash --fail-first ssh ${USERARGS}$FQDN /bin/true
+  echo "Unlocking LUKS drive"
+  pass machines/$TARGETHOST/luks | ssh ${USERARGS}$FQDN systemd-tty-ask-password-agent || (echo "Failed to unlock LUKS drive"; return 1)
+  run_and_notify.bash ssh ${USERARGS}$TAILSCALE_HOST /bin/true
 }
 
 compdef restart=ssh
