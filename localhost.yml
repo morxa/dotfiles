@@ -39,6 +39,6 @@
         - vim-plugins-update.timer
     - name: add run-and-notify script
       copy:
-        src: run_and_notifiy.bash
+        src: run_and_notify.bash
         dest: ~/bin
         mode: 0755
