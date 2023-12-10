@@ -24,7 +24,6 @@
         src: '{{ item }}'
         dest: ~/.config/systemd/user/
       loop:
-        - socks-rwth.service
         - vim-plugins-update.service
         - vim-plugins-update.timer
         - vim-ycm-update.service
@@ -35,8 +34,22 @@
         enabled: yes
         scope: user
       loop:
-        - socks-rwth.service
         - vim-plugins-update.timer
+    - name: add RWTH user services
+      copy:
+        src: '{{ item }}'
+        dest: ~/.config/systemd/user/
+      loop:
+        - socks-rwth.service
+      when: ansible_user_id == 'thofmann'
+    - name: enable RWTH user services
+      systemd:
+        name: '{{ item }}'
+        state: started
+        enabled: yes
+        scope: user
+      loop:
+        - socks-rwth.service
     - name: add run-and-notify script
       copy:
         src: run_and_notify.bash
