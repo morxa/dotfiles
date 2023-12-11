@@ -281,6 +281,8 @@ imap <C-K> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
 
 map <C-n> :NERDTreeToggle<CR>
 
+let g:NERDTreeWinSize=60
+
 " ultisnips
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-l>"
