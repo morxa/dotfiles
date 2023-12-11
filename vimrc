@@ -168,6 +168,10 @@ set wildmenu
 autocmd FileType cmake,cpp nnoremap <C-m> :make! all<CR>
 autocmd FileType cmake,cpp nnoremap <C-t> :make! CTEST_OUTPUT_ON_FAILURE=1 test<CR>
 autocmd FileType cmake,cpp nnoremap <leader>b :CMake<CR>
+autocmd FileType python nnoremap <leader>t :Pytest project<CR>
+autocmd FileType python nnoremap <leader>f :Pytest file<CR>
+autocmd FileType python nnoremap <leader>c :Pytest class<CR>
+autocmd FileType python nnoremap <leader>m :Pytest method<CR>
 
 " cmake
 let g:cmake_export_compile_commands = 1
