@@ -54,6 +54,8 @@ Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'andymass/vim-matchup'
 Plugin 'github/copilot.vim'
 Plugin 'rkaminsk/vim-syntax-clingo'
+Plugin 'powerman/vim-plugin-AnsiEsc'
+Plugin 'alfredodeza/pytest.vim'
 
 
 " All of your Plugins must be added before the following line
