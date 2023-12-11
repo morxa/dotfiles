@@ -157,7 +157,7 @@ highlight ColorColumn ctermbg=7
 set et
 set iskeyword+=:
 set winaltkeys=no
-set autochdir
+"set autochdir
 "set <m-i>=i
 syntax on
 set background=dark
