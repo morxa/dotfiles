@@ -263,6 +263,8 @@ autocmd FileType tex inoremap !<Space> !
 "autocmd FileType tex inoremap \! !
 autocmd FileType tex inoremap ?<Space> ?
 "autocmd FileType tex inoremap \? ?
+let g:tex_comment_nospell=1
+autocmd FileType tex set spell
 
 autocmd FileType spec set textwidth=0
 autocmd FileType spec set colorcolumn=0
