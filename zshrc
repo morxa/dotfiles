@@ -178,6 +178,11 @@ source ~/.rcllrc
 
 export ANSIBLE_STDOUT_CALLBACK=debug
 
+export NPM_PACKAGES="$HOME/.npm-packages"
+export PATH="$NPM_PACKAGES/bin:$PATH"
+export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
+export MANPATH="$NPM_PACKAGES/share/man:${MANPATH:-$(manpath)}"
+
 if command -v github-copilot-cli &> /dev/null
 then
   eval "$(github-copilot-cli alias -- "$0")"
