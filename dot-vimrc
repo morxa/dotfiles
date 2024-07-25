@@ -299,7 +299,7 @@ call mkdp#util#install()
 autocmd FileType c,cpp set foldmethod=syntax
 
 let g:copilot_filetypes = {
-      \ 'tex': v:false,
+      \ 'pddl': v:true,
       \ }
 
 
