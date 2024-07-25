@@ -234,7 +234,8 @@ endfunction
 "autocmd BufWritePre *.h,*.cc,*.cpp call FormatOnSave()
 
 call glaive#Install()
-Glaive codefmt plugin[mappings]
+Glaive codefmt plugin[mappings] clang_format_executable=/usr/lib64/llvm17/bin/clang-format
+
 
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
