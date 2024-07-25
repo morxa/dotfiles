@@ -1,0 +1,11 @@
+\.git
+\.gitignore
+\..*\.sw.
+tags
+files
+^/Makefile
+^/setup.*
+
+^/README.*
+^/LICENSE.*
+^/COPYING

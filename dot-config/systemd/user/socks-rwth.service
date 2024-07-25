@@ -8,7 +8,7 @@ StartLimitBurst=5
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/ssh -v -D 1080 -N mangan.informatik.rwth-aachen.de
+ExecStart=/usr/bin/ssh -v -D 1080 -o ServerAliveInterval=5 -N mangan.informatik.rwth-aachen.de
 Restart=on-failure
 RestartSec=10
 
