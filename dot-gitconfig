@@ -36,3 +36,5 @@
 	required = true
 [safe]
 	directory = /home/thofmann/cluster
+[pull]
+	rebase = true
