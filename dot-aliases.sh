@@ -115,7 +115,7 @@ function restart () {
   local FQDN=$TARGETHOST
   local TAILSCALE_HOST="$TARGETHOST.tailnet-d0ca.ts.net"
   if [ "$TARGETHOST" != "elefant" ] ; then
-    FQDN="$TARGETHOST.fritz.box"
+    FQDN="$TARGETHOST.43.gmbh"
   fi
   echo "Restarting $TARGETHOST ..."
   local USERARGS="${SSHUSER:+$SSHUSER@}"
