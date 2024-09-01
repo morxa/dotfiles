@@ -38,3 +38,5 @@
 	directory = /home/thofmann/cluster
 [pull]
 	rebase = true
+[includeIf "gitdir:~/fedora/"]
+  path = ~/fedora/gitconfig
