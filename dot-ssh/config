@@ -1,0 +1,29 @@
+Host polonium.informatik.rwth-aachen.de
+  HostName polonium.informatik.rwth-aachen.de
+
+Host terbium.informatik.rwth-aachen.de
+  HostName terbium.informatik.rwth-aachen.de
+
+Host lactose.informatik.rwth-aachen.de
+
+Host *.informatik.rwth-aachen.de
+  User till.hofmann
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+#Match host *.informatik.rwth-aachen.de !host mangan.informatik.rwth-aachen.de,zirconium.informatik.rwth-aachen.de #final exec "nc -w 0.1 -z mangan.informatik.rwth-aachen.de 22"
+#  ProxyJump mangan.informatik.rwth-aachen.de
+Match host *.informatik.rwth-aachen.de !host mangan.informatik.rwth-aachen.de,zirconium.informatik.rwth-aachen.de
+  ProxyJump mangan.informatik.rwth-aachen.de
+  #ProxyJump zirconium.informatik.rwth-aachen.de
+
+#Host zirconium.informatik.rwth-aachen.de
+#  ProxyJump kirk.kbsg.rwth-aachen.de
+
+Host *.kbsg.rwth-aachen.de
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_kbsg
+  IdentitiesOnly yes
+
+Host *.kbsg.rwth-aachen.de !kirk.kbsg.rwth-aachen.de
+  ProxyJump kirk.kbsg.rwth-aachen.de
