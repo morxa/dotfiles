@@ -50,7 +50,9 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git notify)
-plugins=(git docker pipenv poetry poetry-venv)
+# https://github.com/darvid/zsh-poetry
+#plugins=(git docker poetry poetry-venv)
+plugins=(git docker poetry)
 
 # User configuration
 
@@ -168,7 +170,7 @@ function vi_mode_prompt_info() {
 RPS1='$(vi_mode_prompt_info)'
 RPS2=$RPS1
 
-eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
+#eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 
 export LC_TIME=en_GB.UTF-8
 
