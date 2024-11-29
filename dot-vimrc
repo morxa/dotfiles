@@ -187,7 +187,7 @@ au BufRead,BufNewFile *.pl set filetype=prolog
 "let ayucolor="light"  " for light version of theme
 "let ayucolor="mirage" " for mirage version of theme
 "let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+"colorscheme ayu
 
 " YCM setttings
 nnoremap <leader>g :YcmCompleter GoTo<CR>
@@ -214,7 +214,7 @@ function! g:committia_hooks.edit_open(info)
 endfunction
 
 " color scheme PaperColor
-set background=light
+set background=dark
 colorscheme PaperColor
 
 " fugitive
