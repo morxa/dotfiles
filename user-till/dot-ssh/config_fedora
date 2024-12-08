@@ -1,0 +1,4 @@
+Host *.fedoraproject.org
+  User thofmann
+  IdentityFile ~/.ssh/id_fedora
+  IdentitiesOnly yes

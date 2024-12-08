@@ -9,3 +9,5 @@ files
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
+
+user-.*

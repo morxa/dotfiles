@@ -1,0 +1,7 @@
+Host *.kbsg.rwth-aachen.de
+  ForwardAgent yes
+  IdentityFile ~/.ssh/id_kbsg
+  IdentitiesOnly yes
+
+Host *.kbsg.rwth-aachen.de !kirk.kbsg.rwth-aachen.de
+  ProxyJump kirk.kbsg.rwth-aachen.de

@@ -1,0 +1,82 @@
+Host smyslov tchalinko tycho
+  User thofmann
+
+Host *.fedoraproject.org
+  User thofmann
+  IdentityFile ~/.ssh/id_fedora
+  IdentitiesOnly yes
+
+#Host maus.43.gmbh
+#  HostName maus
+#
+#Host ratte.43.gmbh
+#  HostName ratte
+
+#Host *.43.gmbh !beagle.43.gmbh !elefant.43.gmbh !nashorn.43.gmbh !ratte.43.gmbh
+#  ProxyJump beagle.43.gmbh
+ 
+#Host beagle beagle.43.gmbh
+#  HostName mhsd.anydns.info
+#  Port 23
+#  User thofmann
+#  IdentityFile ~/.ssh/id_43
+#  IdentitiesOnly yes
+
+#Host nashorn nashorn.43.gmbh
+#  HostName mhsd.anydns.info
+#  Port 22
+#  User thofmann
+#  IdentityFile ~/.ssh/id_43
+#  IdentitiesOnly yes
+ 
+Host maus elefant nashorn ratte pinguin maus.43.gmbh elefant.43.gmbh nashorn.43.gmbh ratte.43.gmbh pinguin.43.gmbh beagle dumbo molch hamster hamster.43.gmbh
+  User root
+  IdentityFile ~/.ssh/id_43
+  IdentitiesOnly yes
+  ForwardAgent yes
+
+Host gitlab.43.gmbh
+  HostName nashorn
+
+#Host elefant.43.gmbh
+#  HostName buck.anydns.info
+
+Host buck.anydns.info
+  User thofmann
+  IdentityFile ~/.ssh/id_43
+  IdentitiesOnly yes
+
+Host elefant.43.gmbh
+  ProxyJump maus
+  HostName elefant.fritz.box
+
+Host dumbo.43.gmbh
+  HostName buck.anydns.info
+
+Host nashorn.43.gmbh
+  ProxyJump hamster
+  HostName nashorn.fritz.box
+#Host *.43.gmbh !maus.43.gmbh !elefant.43.gmbh !ratte.43.gmbh
+#  ProxyJump maus
+#
+
+Host maus.43.gmbh
+  ProxyJump molch
+  HostName maus.fritz.box
+
+Host ratte.43.gmbh
+  HostName ratte.fritz.box
+
+Host hamster.43.gmbh
+  HostName hamster.fritz.box
+  ProxyJump nashorn
+
+Host obdlogger3
+  ProxyJump maus
+
+Host autopi
+  HostName autopi-4af7208ee8a081b6fd45dc6568f0319d
+  User pi
+Host autopi2 autopi-5b615efff6f480fc853a5ec42cce02b1
+  HostName autopi-5b615efff6f480fc853a5ec42cce02b1
+  User pi
