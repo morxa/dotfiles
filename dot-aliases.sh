@@ -119,7 +119,7 @@ function restart () {
   fi
   echo "Restarting $TARGETHOST ..."
   local USERARGS="${SSHUSER:+$SSHUSER@}"
-  ssh ${USERARGS}$TAILSCALE_HOST shutdown -r || (echo "Failed to restart $TARGETHOST"; return 1)
+  ssh ${USERARGS}$FQDN shutdown -r || (echo "Failed to restart $TARGETHOST"; return 1)
   echo "Waiting for $TARGETHOST to be online"
   run_and_notify.bash --fail-first ssh ${USERARGS}$FQDN /bin/true
   echo "Unlocking LUKS drive"
