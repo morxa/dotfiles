@@ -113,7 +113,7 @@ function restart () {
     SSHUSER="root"
   fi
   local FQDN=$TARGETHOST
-  local TAILSCALE_HOST="$TARGETHOST.tailnet-d0ca.ts.net"
+  local TAILSCALE_HOST="$TARGETHOST.tail56f863.ts.net"
   if [ "$TARGETHOST" != "elefant" ] ; then
     FQDN="$TARGETHOST.43.gmbh"
   fi
