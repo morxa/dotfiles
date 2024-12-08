@@ -185,9 +185,9 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export MANPATH="$NPM_PACKAGES/share/man:${MANPATH:-$(manpath)}"
 
-if command -v github-copilot-cli &> /dev/null
+if command -v gh &> /dev/null
 then
-  eval "$(github-copilot-cli alias -- "$0")"
+  eval "$(gh copilot alias -- zsh)"
 fi
 
 
