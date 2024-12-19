@@ -153,7 +153,6 @@ set tabstop=2
 set sw=2
 "set textwidth=80
 "set colorcolumn=81
-highlight ColorColumn ctermbg=7
 set et
 set iskeyword+=:
 set winaltkeys=no
@@ -216,6 +215,10 @@ endfunction
 " color scheme PaperColor
 set background=dark
 colorscheme PaperColor
+highlight ColorColumn ctermbg=7
+"highlight Search ctermbg=3
+highlight IncSearch ctermbg=4 ctermfg=7
+
 
 " fugitive
 let g:fugitive_gitlab_domains = ['https://git.rwth-aachen.de']
