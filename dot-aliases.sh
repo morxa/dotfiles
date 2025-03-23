@@ -94,37 +94,6 @@ function vnc () {
 
 compdef vnc=ssh
 
-function restart () {
-  local TARGETHOST="$1"
-  local SUDO=""
-  local SSHUSER=""
-  if [ $# -eq 2 ] ; then
-    if  [ "$1" = "--sudo" ] ; then
-      SUDO="sudo"
-      TARGETHOST="$2"
-    else
-      echo "Usage: restart [--sudo] <host>" >&2
-      return 1
-    fi
-  elif [ $# -ne 1 ] ; then
-    echo "Usage: restart [--sudo] <host>" >&2
-    return 1
-  else
-    SSHUSER="root"
-  fi
-  local FQDN=$TARGETHOST
-  local TAILSCALE_HOST="$TARGETHOST.tail56f863.ts.net"
-  if [ "$TARGETHOST" != "elefant" ] ; then
-    FQDN="$TARGETHOST.43.gmbh"
-  fi
-  echo "Restarting $TARGETHOST ..."
-  local USERARGS="${SSHUSER:+$SSHUSER@}"
-  ssh ${USERARGS}$FQDN shutdown -r || (echo "Failed to restart $TARGETHOST"; return 1)
-  echo "Waiting for $TARGETHOST to be online"
-  run_and_notify.bash --fail-first ssh ${USERARGS}$FQDN /bin/true
-  echo "Unlocking LUKS drive"
-  pass machines/$TARGETHOST/luks | ssh ${USERARGS}$FQDN systemd-tty-ask-password-agent || (echo "Failed to unlock LUKS drive"; return 1)
-  run_and_notify.bash ssh ${USERARGS}$TAILSCALE_HOST /bin/true
-}
-
-compdef restart=ssh
+if [ -f ~/43/admin/scripts/restart.bash ]
+  alias restart="~/43/admin/scripts/restart.bash"
+fi
