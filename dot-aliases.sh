@@ -94,6 +94,6 @@ function vnc () {
 
 compdef vnc=ssh
 
-if [ -f ~/43/admin/scripts/restart.bash ]
+if [ -f ~/43/admin/scripts/restart.bash ] ; then
   alias restart="~/43/admin/scripts/restart.bash"
 fi
