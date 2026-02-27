@@ -1,1 +1,4 @@
+Host *
+  ControlPath ~/.local/share/ssh_%r@%h:%p
+
 Include config_*

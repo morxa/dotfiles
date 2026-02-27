@@ -7,6 +7,8 @@ Host *.fedoraproject.org
   IdentitiesOnly yes
 
 Host maus elefant nashorn ratte pinguin maus.43.gmbh elefant.43.gmbh nashorn.43.gmbh ratte.43.gmbh pinguin.43.gmbh beagle dumbo molch hamster hamster.43.gmbh
+  ControlMaster auto
+  ControlPersist yes
   User root
   IdentityFile ~/.ssh/id_43
   IdentitiesOnly yes
