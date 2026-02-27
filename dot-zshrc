@@ -52,7 +52,7 @@ COMPLETION_WAITING_DOTS="true"
 #plugins=(git notify)
 # https://github.com/darvid/zsh-poetry
 #plugins=(git docker poetry poetry-venv)
-plugins=(git docker poetry)
+plugins=(git docker poetry poetry-env virtualenv)
 
 # User configuration
 
