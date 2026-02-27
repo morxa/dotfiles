@@ -166,9 +166,11 @@ function vi_mode_prompt_info() {
   echo "${${KEYMAP/vicmd/[% NORMAL]%}/(main|viins)/[% INSERT]%}"
 }
 
+VIRTUAL_ENV_DISABLE_PROMPT=1
+
 # define right prompt, regardless of whether the theme defined it
-RPS1='$(vi_mode_prompt_info)'
-RPS2=$RPS1
+RPS1='$(virtualenv_prompt_info)$(vi_mode_prompt_info)'
+#RPS2=$RPS1
 
 #eval "$(_PIPENV_COMPLETE=zsh_source pipenv)"
 
