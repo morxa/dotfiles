@@ -129,10 +129,11 @@ let g:vimtex_quickfix_ignore_filters = [
 \]
 
 " vimtex + YouCompleteMe
+" https://github.com/lervag/vimtex/issues/931#issuecomment-409130616
 if !exists('g:ycm_semantic_triggers')
   let g:ycm_semantic_triggers = {}
 endif
-let g:ycm_semantic_triggers.tex = g:vimtex#re#youcompleteme
+au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
 
 " rust with YouCompleteMe
 let g:ycm_rust_src_path = '/usr/lib/rustlib/src/rust/src/'
