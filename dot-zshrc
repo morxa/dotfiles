@@ -70,6 +70,10 @@ if [ -d "$CUDABINDIR" ] ; then
   export PATH="$CUDABINDIR:$PATH"
 fi
 
+if [ -d "$HOME/.cargo/bin" ] ; then
+  export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 #export GOPATH=$HOME/go
 
 disable_ccache() {
