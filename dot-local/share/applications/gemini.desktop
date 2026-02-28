@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Gemini
+GenericName=Gemini
+Exec=google-chrome --user-data-dir=%/.config/gemini --start-maximized --app=https://gemini.google.com
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+SingleMainWindow=true
+Icon=gemini
+StartupWMClass=chrome-gemini.google.com__-Default

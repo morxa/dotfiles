@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=NotebookLM
+GenericName=NotebookLM
+Exec=google-chrome --user-data-dir=%/.config/notebooklm --start-maximized --app=https://notebooklm.google.com
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+SingleMainWindow=true
+Icon=notebooklm
+StartupWMClass=chrome-notebooklm.google.com__-Default

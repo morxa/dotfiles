@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Google Calendar
+GenericName=Calendar
+Exec=google-chrome --user-data-dir=%/.config/google-calendar --start-maximized --app=https://calendar.google.com
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+SingleMainWindow=true
+Icon=google-calendar
+StartupWMClass=chrome-calendar.google.com__-Default

@@ -3,6 +3,7 @@ all: stow stow-user xkb-options
 stow:
 	stow --dotfiles -v .
 	systemctl --user enable --now vim-plugins-update.timer #socks-rwth.service
+	update-desktop-database ~/.local/share/applications
 
 xkb-options:
 	dconf write /org/gnome/desktop/input-sources/xkb-options "['caps:swapescape']"
