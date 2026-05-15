@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Claude
+GenericName=Claude
+Exec=google-chrome --user-data-dir=%/.config/claude --start-maximized --app=https://claude.ai
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+SingleMainWindow=true
+Icon=claude
+StartupWMClass=claude.ai__-Default
