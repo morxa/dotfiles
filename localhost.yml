@@ -15,3 +15,15 @@
         name: zoom-update.timer
         state: started
         enabled: yes
+    - name: create chrome policy directory
+      file:
+        path: /etc/opt/chrome/policies/managed
+        state: directory
+        mode: "0755"
+      become: yes
+    - name: open links in firefox instead of chrome
+      copy:
+        src: chrome-browser-switcher.json
+        dest: /etc/opt/chrome/policies/managed/browser-switcher.json
+        mode: "0644"
+      become: yes

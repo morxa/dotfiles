@@ -1,0 +1,18 @@
+{
+  "BrowserSwitcherEnabled": true,
+  "AlternativeBrowserPath": "/usr/bin/firefox",
+  "AlternativeBrowserParameters": ["${url}"],
+  "BrowserSwitcherKeepLastChromeTab": true,
+  "BrowserSwitcherUrlList": ["*"],
+  "BrowserSwitcherUrlGreylist": [
+    "outlook.office.com",
+    "claude.ai",
+    "gemini.google.com",
+    "calendar.google.com",
+    "notebooklm.google.com",
+    "www.overleaf.com",
+    "accounts.google.com",
+    "login.microsoftonline.com",
+    "login.live.com"
+  ]
+}
