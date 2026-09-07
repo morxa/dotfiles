@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Microsoft Office
+GenericName=Office
+Exec=google-chrome --user-data-dir=%/.config/microsoft-office --start-maximized --app=https://outlook.office.com
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+SingleMainWindow=true
+Icon=microsoft-office
+StartupWMClass=chrome-outlook.office.com__-Default
