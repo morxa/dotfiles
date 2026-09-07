@@ -1,4 +1,8 @@
 - hosts: localhost
+  vars:
+    # sudo prompts for a fingerprint first, so the password prompt ansible
+    # matches on only appears after pam_fprintd gives up (default wait: 10s)
+    ansible_local_become_success_timeout: 60
   tasks:
     - name: install zoom updater
       copy:
