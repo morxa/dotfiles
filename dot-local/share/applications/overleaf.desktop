@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Overleaf
+GenericName=Overleaf
+Exec=chromium-browser --user-data-dir=%/.config/overleaf --start-maximized --app=https://www.overleaf.com
+Terminal=false
+Type=Application
+Categories=Utility;Application;
+SingleMainWindow=true
+Icon=overleaf
+StartupWMClass=chrome-www.overleaf.com__-Default
