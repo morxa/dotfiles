@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Microsoft Office
 GenericName=Office
-Exec=google-chrome --user-data-dir=%/.config/microsoft-office --start-maximized --app=https://outlook.office.com
+Exec=chromium-browser --user-data-dir=%/.config/microsoft-office --start-maximized --app=https://outlook.office.com
 Terminal=false
 Type=Application
 Categories=Utility;Application;

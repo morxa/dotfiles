@@ -19,15 +19,19 @@
         name: zoom-update.timer
         state: started
         enabled: yes
-    - name: create chrome policy directory
-      file:
-        path: /etc/opt/chrome/policies/managed
-        state: directory
-        mode: "0755"
+    - name: install chromium for web apps
+      package:
+        name: chromium
+        state: present
       become: yes
-    - name: open links in firefox instead of chrome
+    - name: remove browser switcher policy from chrome
+      file:
+        path: /etc/opt/chrome/policies/managed/browser-switcher.json
+        state: absent
+      become: yes
+    - name: open links from chromium web apps in firefox
       copy:
-        src: chrome-browser-switcher.json
-        dest: /etc/opt/chrome/policies/managed/browser-switcher.json
+        src: chromium-browser-switcher.json
+        dest: /etc/chromium/policies/managed/browser-switcher.json
         mode: "0644"
       become: yes

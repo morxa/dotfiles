@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Gemini
 GenericName=Gemini
-Exec=google-chrome --user-data-dir=%/.config/gemini --start-maximized --app=https://gemini.google.com
+Exec=chromium-browser --user-data-dir=%/.config/gemini --start-maximized --app=https://gemini.google.com
 Terminal=false
 Type=Application
 Categories=Utility;Application;
