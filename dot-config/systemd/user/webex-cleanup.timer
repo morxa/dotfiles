@@ -1,0 +1,8 @@
+[Unit]
+Description=Timer for Webex Cleanup
+
+[Timer]
+OnStartupSec=0
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,6 @@
+[Unit]
+Description=Reset Webex Launcher
+
+[Service]
+Type=oneshot
+ExecStart=rm -rf %h/.local/share/WebexLauncher
