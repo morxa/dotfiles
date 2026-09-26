@@ -1,10 +1,7 @@
-Host terbium.informatik.rwth-aachen.de
-  HostName terbium.informatik.rwth-aachen.de
-
 Host *.informatik.rwth-aachen.de *.ml.rwth-aachen.de
   User till.hofmann
   ForwardAgent yes
   IdentityFile ~/.ssh/id_ed25519
   IdentitiesOnly yes
-Match host *.informatik.rwth-aachen.de,*.ml.rwth-aachen.de !host gateway1.ml.rwth-aachen.de
+Match Host *.informatik.rwth-aachen.de,*.ml.rwth-aachen.de !host gateway?.ml.rwth-aachen.de
   ProxyJump gateway1.ml.rwth-aachen.de
