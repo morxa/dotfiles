@@ -1,0 +1,7 @@
+# Written by `systemctl --user enable`/`link`, since ~/.config/systemd
+# is symlinked into this repo; they point at machine-specific paths.
+dot-config/systemd/user/*.target.wants/
+dot-config/systemd/user/mineru-api.socket
+
+# ctags output
+tags
