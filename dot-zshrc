@@ -205,3 +205,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+if [ -d ~/.pyenv/bin ] ; then
+  export PATH="$HOME/.pyenv/bin:$PATH"
+  eval "$(pyenv init - zsh)"
+fi
