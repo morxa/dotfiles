@@ -1,4 +1,8 @@
 Host *
   ControlPath ~/.local/share/ssh_%r@%h:%p
 
-Include config_*
+Host *.uberspace.de
+  User morxa
+
+Host *
+  Include config_*
