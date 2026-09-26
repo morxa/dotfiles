@@ -7,4 +7,4 @@ Type=Application
 Categories=Utility;Application;
 SingleMainWindow=true
 Icon=claude
-StartupWMClass=claude.ai__-Default
+StartupWMClass=chrome-claude.ai__-Default
