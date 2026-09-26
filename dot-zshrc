@@ -212,3 +212,7 @@ if [ -d ~/.pyenv/bin ] ; then
 fi
 
 export SKPLAN_FIGURE_DIR=~/Documents/papers/skplan/figures/
+
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  RPROMPT=""
+fi
