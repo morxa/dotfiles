@@ -4,6 +4,13 @@
     # matches on only appears after pam_fprintd gives up (default wait: 10s)
     ansible_local_become_success_timeout: 60
   tasks:
+    - name: skip fingerprint reader for sudo
+      lineinfile:
+        path: /etc/pam.d/sudo
+        line: "auth       sufficient   pam_unix.so"
+        insertbefore: '^auth\s+include\s+system-auth'
+        firstmatch: yes
+      become: yes
     - name: install zoom updater
       copy:
         src: zoom-update.service
