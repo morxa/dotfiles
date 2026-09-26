@@ -126,6 +126,8 @@ let g:vimtex_quickfix_ignore_filters = [
   \'Missing "address"',
   \'Missing "publisher"',
   \'Columns might not be balanced',
+  \'Missing "pages"',
+  \'2022/10/12 v3.38 KOMA-Script',
 \]
 
 " vimtex + YouCompleteMe
