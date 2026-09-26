@@ -97,3 +97,18 @@ compdef vnc=ssh
 if [ -f ~/43/admin/scripts/restart.bash ] ; then
   alias restart="~/43/admin/scripts/restart.bash"
 fi
+
+alias p='poetry run python'
+# Your alias
+alias p='poetry run python'
+
+# The completion wrapper
+_p_completion() {
+  # This shifts the completion context to 'python' 
+  # and ignores the first two words ('poetry' and 'run')
+  words=(python "${(@)words[2,-1]}")
+  (( CURRENT++ ))
+  _python
+}
+
+compdef _p_completion p
