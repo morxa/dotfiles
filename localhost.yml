@@ -29,6 +29,12 @@
         path: /etc/opt/chrome/policies/managed/browser-switcher.json
         state: absent
       become: yes
+    - name: create chromium policy directory
+      file:
+        path: /etc/chromium/policies/managed
+        state: directory
+        mode: "0755"
+      become: yes
     - name: open links from chromium web apps in firefox
       copy:
         src: chromium-browser-switcher.json
