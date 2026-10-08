@@ -4,6 +4,6 @@ Host *.informatik.rwth-aachen.de *.ml.rwth-aachen.de
   IdentityFile ~/.ssh/id_ed25519
   IdentitiesOnly yes
   ControlMaster auto
-  ControlPersist 10m
+  ControlPersist 1d
 Match Host *.informatik.rwth-aachen.de,*.ml.rwth-aachen.de !host gateway?.ml.rwth-aachen.de
   ProxyJump gateway1.ml.rwth-aachen.de
