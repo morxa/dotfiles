@@ -21,3 +21,10 @@ icons: stow
 stow-user:
 	@[ -n "$(USER)" ] || (echo "USER is not set" && exit 1)
 	stow --dotfiles -v user-$(USER)
+
+# Chrome only updates the extension when the version in manifest.json and
+# chrome-open-in-firefox-updates.xml is bumped; the signing key is not in git
+files/chrome-open-in-firefox.crx: $(wildcard files/chrome-open-in-firefox/*)
+	rm -f $@
+	google-chrome --pack-extension=$(CURDIR)/files/chrome-open-in-firefox \
+		--pack-extension-key=$(HOME)/.config/chrome-open-in-firefox.pem

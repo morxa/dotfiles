@@ -26,26 +26,64 @@
         name: zoom-update.timer
         state: started
         enabled: yes
-    - name: install chromium for web apps
-      package:
-        name: chromium
-        state: present
-      become: yes
-    - name: remove browser switcher policy from chrome
+    - name: remove browser switcher policies
       file:
-        path: /etc/opt/chrome/policies/managed/browser-switcher.json
+        path: "{{ item }}"
         state: absent
+      loop:
+        - /etc/opt/chrome/policies/managed/browser-switcher.json
+        - /etc/chromium/policies/managed/browser-switcher.json
       become: yes
-    - name: create chromium policy directory
+    - name: install native messaging host to open links in firefox
+      copy:
+        src: open-in-firefox
+        dest: /usr/local/libexec/open-in-firefox
+        mode: "0755"
+      become: yes
+    - name: create native messaging host directories
       file:
-        path: /etc/chromium/policies/managed
+        path: "{{ item }}"
+        state: directory
+        mode: "0755"
+      loop:
+        - /etc/opt/chrome/native-messaging-hosts
+        - /etc/chromium/native-messaging-hosts
+      become: yes
+    # chromium only for developing the extension with --load-extension
+    - name: register native messaging host with chrome and chromium
+      copy:
+        src: open-in-firefox.json
+        dest: "{{ item }}/open_in_firefox.json"
+        mode: "0644"
+      loop:
+        - /etc/opt/chrome/native-messaging-hosts
+        - /etc/chromium/native-messaging-hosts
+      become: yes
+    - name: create open in firefox extension directory
+      file:
+        path: /usr/local/share/chrome-open-in-firefox
         state: directory
         mode: "0755"
       become: yes
-    - name: open links from chromium web apps in firefox
+    - name: install open in firefox extension
       copy:
-        src: chromium-browser-switcher.json
-        dest: /etc/chromium/policies/managed/browser-switcher.json
+        src: "{{ item.src }}"
+        dest: "/usr/local/share/chrome-open-in-firefox/{{ item.dest }}"
+        mode: "0644"
+      loop:
+        - {src: chrome-open-in-firefox.crx, dest: open-in-firefox.crx}
+        - {src: chrome-open-in-firefox-updates.xml, dest: updates.xml}
+      become: yes
+    - name: create chrome policy directory
+      file:
+        path: /etc/opt/chrome/policies/managed
+        state: directory
+        mode: "0755"
+      become: yes
+    - name: open links from chrome web apps in firefox
+      copy:
+        src: chrome-open-in-firefox-policy.json
+        dest: /etc/opt/chrome/policies/managed/open-in-firefox.json
         mode: "0644"
       become: yes
     - name: install nextcloud talk update script

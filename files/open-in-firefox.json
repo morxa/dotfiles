@@ -1,0 +1,7 @@
+{
+  "name": "open_in_firefox",
+  "description": "Open URLs in Firefox",
+  "path": "/usr/local/libexec/open-in-firefox",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://fkkamjnopcdjadfnonoajoallenlaagi/"]
+}

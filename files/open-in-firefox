@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+# Chrome native messaging host: open the received URL in Firefox.
+import json
+import struct
+import subprocess
+import sys
+
+length = struct.unpack("<I", sys.stdin.buffer.read(4))[0]
+url = json.loads(sys.stdin.buffer.read(length))["url"]
+if url.startswith(("http://", "https://")):
+    subprocess.Popen(["firefox", url], start_new_session=True,
+                     stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                     stderr=subprocess.DEVNULL)
+reply = json.dumps({}).encode()
+sys.stdout.buffer.write(struct.pack("<I", len(reply)) + reply)
+sys.stdout.buffer.flush()
