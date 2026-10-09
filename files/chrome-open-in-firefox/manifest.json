@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Open in Firefox",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Open links that leave a web app window in Firefox.",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAlJxyLVc1pt2nkj+6pvzR7YIrP3rpeFyWdGBZWgmdeFz8SQ+U0GAXGUaRgFdCG9EZXTGwMRyorOBbm1DI6CtQ7G1m4jdfnn4uwgG4P3nrfuySOecIdIsghPuDRVl7D8UGLm/KHOR1hgbBqIXHuBRRzW9SAQ+Qs6PPQVo4ES1jZzJjYGMkLff+FRQIbxvMQEaJLzjfW4WOjEZIvoLuMFVbixosqyciqiE71NknBsacPYHcnKb7YN95pRzUyGn2aYGAsE/EYAI70xuJp4fKlyVxSZ62R5jisM75JUuePBDjFLLXnUoF+0rMgVe17ytPASH+/o8po9vrJo+bZ7xdo1sCkQIDAQAB",
   "permissions": ["nativeMessaging", "tabs", "webNavigation"],
