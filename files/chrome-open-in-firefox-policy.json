@@ -1,5 +1,9 @@
 {
-  "ExtensionInstallForcelist": [
-    "fkkamjnopcdjadfnonoajoallenlaagi;file:///usr/local/share/chrome-open-in-firefox/updates.xml"
-  ]
+  "ExtensionSettings": {
+    "fkkamjnopcdjadfnonoajoallenlaagi": {
+      "installation_mode": "force_installed",
+      "update_url": "file:///usr/local/share/chrome-open-in-firefox/updates.xml",
+      "override_update_url": true
+    }
+  }
 }
