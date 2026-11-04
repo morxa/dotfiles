@@ -131,12 +131,10 @@ let g:vimtex_quickfix_ignore_filters = [
   \'2022/10/12 v3.38 KOMA-Script',
 \]
 
-" vimtex + YouCompleteMe
-" https://github.com/lervag/vimtex/issues/931#issuecomment-409130616
-if !exists('g:ycm_semantic_triggers')
-  let g:ycm_semantic_triggers = {}
-endif
-au VimEnter * let g:ycm_semantic_triggers.tex=g:vimtex#re#youcompleteme
+" vimtex: Vim's built-in autocompletion (YCM is blacklisted for tex below).
+" Only vimtex's omnifunc as source, so the menu only pops up for \commands,
+" references, citations, files, environments etc., never for plain words.
+autocmd FileType tex setlocal autocomplete complete=o completeopt=menuone,popup
 
 " rust with YouCompleteMe
 let g:ycm_rust_src_path = '/usr/lib/rustlib/src/rust/src/'
