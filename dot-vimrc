@@ -303,6 +303,11 @@ let g:UltiSnipsEditSplit="context"
 
 " markdown
 call mkdp#util#install()
+" markdown-preview only pushes content on cursor events, so a buffer that
+" autoread reloads after an external change stays stale in the browser.
+" (Reloading the browser tab instead gives a 404: the page rewrites its URL
+" from /page/N to /N, which the preview server does not route.)
+autocmd FileChangedShellPost * if &filetype ==# 'markdown' && bufnr('%') == expand('<abuf>') | call mkdp#rpc#preview_refresh() | endif
 
 " folding
 autocmd FileType c,cpp set foldmethod=syntax
@@ -330,3 +335,6 @@ let g:ycm_language_server = [{
   \   'bean_check': {'python_cmd': expand('~/code/beancount-env/.venv/bin/python')},
   \ },
   \ }]
+
+set autoread
+call timer_start(1000, {-> execute('silent! checktime')}, {'repeat': -1})
