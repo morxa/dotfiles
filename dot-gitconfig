@@ -17,7 +17,10 @@
 	unmerged = branch -a --no-merged HEAD
 	merged = branch -a --merged
 [push]
-	default = upstream
+	default = current
+	autoSetupRemote = true
+[branch]
+	autoSetupMerge = simple
 [core]
 	editor = vim
   pager = less -F -x 1,3
