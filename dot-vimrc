@@ -303,6 +303,16 @@ let g:UltiSnipsEditSplit="context"
 
 " markdown
 call mkdp#util#install()
+" The preview caps the page at 900px (#page-ctn in page.css). A custom
+" g:mkdp_markdown_css replaces the plugin's markdown.css entirely, so build
+" one from the plugin's own file plus an override that lifts the cap.
+let s:mkdp_css_src = globpath(&runtimepath, 'app/_static/markdown.css', 0, 1)
+if !empty(s:mkdp_css_src)
+  let s:mkdp_css = expand('~/.cache/vim/markdown-preview.css')
+  call mkdir(fnamemodify(s:mkdp_css, ':h'), 'p')
+  call writefile(readfile(s:mkdp_css_src[0]) + ['#page-ctn { max-width: none; }'], s:mkdp_css)
+  let g:mkdp_markdown_css = s:mkdp_css
+endif
 " markdown-preview only pushes content on cursor events, so a buffer that
 " autoread reloads after an external change stays stale in the browser.
 " (Reloading the browser tab instead gives a 404: the page rewrites its URL
