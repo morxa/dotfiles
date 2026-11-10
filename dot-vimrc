@@ -315,3 +315,20 @@ let g:copilot_filetypes = {
 
 
 "autocmd FileType tex let b:ycm_largefile=1
+
+" beancount
+" Completion values come from the root file and everything it includes
+autocmd FileType beancount let b:beancount_root = expand('~/Documents/Bank/beancount/main.bean')
+" Check the whole ledger, not just the current file (ledger/revolut.bean alone lacks the open directives)
+autocmd FileType beancount setlocal makeprg=bean-check\ ~/Documents/Bank/beancount/main.bean
+
+let g:ycm_language_server = [{
+  \ 'name': 'beancount',
+  \ 'cmdline': [expand('~/.cargo/bin/beancount-language-server'), '--stdio'],
+  \ 'filetypes': ['beancount'],
+  \ 'project_root_files': ['main.bean'],
+  \ 'settings': {
+  \   'journal_file': expand('~/Documents/Bank/beancount/main.bean'),
+  \   'bean_check': {'python_cmd': expand('~/code/beancount-env/.venv/bin/python')},
+  \ },
+  \ }]
