@@ -1,5 +1,7 @@
-Host *
-  ControlPath ~/.local/share/ssh_%r@%h:%p
+#Host *
+#  ControlPath ~/.local/share/ssh_%r@%h:%p
+#  ControlMaster auto
+#  ControlPersist 24h
 
 Host *.uberspace.de
   User morxa
