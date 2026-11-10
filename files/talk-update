@@ -1,0 +1,24 @@
+#!/bin/sh
+# Install the latest Nextcloud Talk flatpak bundle if it changed since the last
+# successful install. Run by talk-update.service (CACHE_DIRECTORY is set there).
+set -eu
+
+url=https://github.com/nextcloud-releases/talk-desktop/releases/latest/download/Nextcloud.Talk-linux-x64.flatpak
+cache=${CACHE_DIRECTORY:-/var/cache/talk-update}
+installed=$cache/installed.flatpak
+new=$cache/new.flatpak
+
+rm -f "$new"
+# -z: only download if newer than the last installed bundle (HTTP 304 otherwise).
+code=$(curl -fsSL --retry 3 -R -z "$installed" -o "$new" -w '%{http_code}' "$url")
+if [ "$code" = 304 ] || [ ! -s "$new" ]; then
+    echo "Nextcloud Talk is up to date"
+    exit 0
+fi
+
+# Installing a bundle over an existing install fails with "already installed"
+# regardless of version, so reinstall. App data in ~/.var/app is kept.
+flatpak install --system --noninteractive -y --reinstall --bundle "$new"
+
+# Only remember the bundle once it is installed, so failed installs are retried.
+mv -f "$new" "$installed"

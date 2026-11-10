@@ -1,0 +1,9 @@
+[Unit]
+Description=Install latest version of Nextcloud Talk
+ConditionACPower=true
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+CacheDirectory=talk-update
+ExecStart=/usr/local/sbin/talk-update

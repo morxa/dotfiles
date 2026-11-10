@@ -48,3 +48,26 @@
         dest: /etc/chromium/policies/managed/browser-switcher.json
         mode: "0644"
       become: yes
+    - name: install nextcloud talk update script
+      copy:
+        src: talk-update
+        dest: /usr/local/sbin/talk-update
+        mode: "0755"
+      become: yes
+    - name: install nextcloud talk updater
+      copy:
+        src: talk-update.service
+        dest: /etc/systemd/system
+      become: yes
+    - name: install nextcloud talk update timer
+      copy:
+        src: talk-update.timer
+        dest: /etc/systemd/system
+      become: yes
+    - name: enable nextcloud talk update timer
+      systemd:
+        name: talk-update.timer
+        state: started
+        enabled: yes
+        daemon_reload: yes
+      become: yes
