@@ -6,16 +6,19 @@ Host *.fedoraproject.org
   IdentityFile ~/.ssh/id_fedora
   IdentitiesOnly yes
 
-Host maus elefant nashorn ratte pinguin maus.43.gmbh elefant.43.gmbh nashorn.43.gmbh ratte.43.gmbh pinguin.43.gmbh beagle dumbo molch hamster hamster.43.gmbh
-  ControlMaster auto
-  ControlPersist yes
-  User root
-  IdentityFile ~/.ssh/id_43
+Host maus elefant nashorn ratte pinguin pottwal beagle dumbo molch hamster pottwal *.43.gmbh
+  User thofmann
+  IdentityFile ~/.ssh/id_ecdsa
   IdentitiesOnly yes
   ForwardAgent yes
 
+Host obdlogger*
+  User root
+  IdentityFile ~/.ssh/id_ecdsa
+  IdentitiesOnly yes
+
 Host gitlab.43.gmbh
-  HostName nashorn
+  IdentityFile ~/.ssh/id_43
 
 #Host elefant.43.gmbh
 #  HostName buck.anydns.info
