@@ -190,6 +190,7 @@ export NPM_PACKAGES="$HOME/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
 export MANPATH="$NPM_PACKAGES/share/man:${MANPATH:-$(manpath)}"
+eval "$(direnv hook zsh)"
 
 if [ -d ~/.pyenv/bin ] ; then
   export PATH="$HOME/.pyenv/bin:$PATH"
