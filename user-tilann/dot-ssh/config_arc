@@ -1,0 +1,5 @@
+Host *.arc.ox.ac.uk
+  User coml1192
+  IdentityFile ~/.ssh/id_ed25519
+  IdentitiesOnly yes
+  ForwardAgent yes
