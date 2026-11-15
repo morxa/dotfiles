@@ -112,3 +112,5 @@ _p_completion() {
 }
 
 compdef _p_completion p
+
+alias x=xdg-open
